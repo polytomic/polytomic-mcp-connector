@@ -1,0 +1,17 @@
+{
+  "name": "polytomic-mcpb-connector",
+  "version": "0.1.10",
+  "private": true,
+  "description": "Polytomic connector for Claude Desktop (.mcpb bundle).",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "mcp-remote": "0.1.38"
+  },
+  "scripts": {
+    "validate": "npx --yes @anthropic-ai/mcpb@2.1.2 validate manifest.json",
+    "pack": "mkdir -p dist && npx --yes @anthropic-ai/mcpb@2.1.2 pack . dist/polytomic-connector.mcpb"
+  }
+}

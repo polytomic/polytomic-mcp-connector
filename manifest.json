@@ -1,0 +1,48 @@
+{
+  "manifest_version": "0.3",
+  "name": "polytomic-connector",
+  "display_name": "Polytomic Connector for Claude Desktop",
+  "version": "0.1.10",
+  "description": "Connect Claude Desktop to a Polytomic MCP server.",
+  "author": {
+    "name": "Polytomic"
+  },
+  "homepage": "https://www.polytomic.com",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.js"
+      ],
+      "env": {
+        "PT_SERVER_URL": "${user_config.server_url}",
+        "PT_API_KEY": "${user_config.api_key}",
+        "PT_READ_ONLY": "${user_config.read_only}",
+        "NODE_OPTIONS": "--use-system-ca"
+      }
+    }
+  },
+  "user_config": {
+    "server_url": {
+      "type": "string",
+      "title": "MCP server URL",
+      "description": "Full URL of your Polytomic MCP endpoint, ending in /mcp — e.g. https://mcp.polytomic.com/mcp",
+      "required": true
+    },
+    "api_key": {
+      "type": "string",
+      "title": "Polytomic API key",
+      "description": "A Polytomic API key. Create one in Polytomic under Settings -> API keys.",
+      "required": true,
+      "sensitive": true
+    },
+    "read_only": {
+      "type": "boolean",
+      "title": "Read-only access",
+      "description": "Restrict this connection to read-only Polytomic operations. Leave unchecked for full access.",
+      "default": false
+    }
+  }
+}

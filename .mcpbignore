@@ -1,0 +1,9 @@
+# Keep the bundle lean. node_modules IS shipped (it contains mcp-remote and its
+# dist/ code), so ignore patterns MUST be root-anchored — an unanchored `dist`
+# would also match node_modules/mcp-remote/dist and break the bundle.
+/.git
+/.github
+/dist
+/.gitignore
+/.mcpbignore
+.DS_Store
