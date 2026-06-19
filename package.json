@@ -1,6 +1,6 @@
 {
   "name": "polytomic-mcpb-connector",
-  "version": "0.1.10",
+  "version": "1.0.0",
   "private": true,
   "description": "Polytomic connector for Claude Desktop (.mcpb bundle).",
   "license": "MIT",

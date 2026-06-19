@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "polytomic-connector",
   "display_name": "Polytomic Connector",
-  "version": "0.1.10",
+  "version": "1.0.0",
   "description": "Connect Claude Desktop to a Polytomic MCP server.",
   "author": {
     "name": "Polytomic"
