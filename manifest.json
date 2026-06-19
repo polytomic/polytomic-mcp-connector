@@ -8,6 +8,7 @@
     "name": "Polytomic"
   },
   "homepage": "https://www.polytomic.com",
+  "icon": "icon.png",
   "server": {
     "type": "node",
     "entry_point": "server/index.js",
