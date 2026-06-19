@@ -29,7 +29,7 @@
     "server_url": {
       "type": "string",
       "title": "MCP server URL",
-      "description": "Full URL of your Polytomic MCP endpoint, ending in /mcp — e.g. https://mcp.polytomic.com/mcp",
+      "description": "Full URL of your Polytomic MCP server, e.g. https://mcp.polytomic.com",
       "required": true
     },
     "api_key": {
