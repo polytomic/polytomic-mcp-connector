@@ -63,11 +63,22 @@ the `mcpb` packer itself is run via `npx` and not bundled.
 
 ## Releases
 
-Pushing a tag that starts with `v` (e.g. `v0.1.0`) runs
-`.github/workflows/release.yml`, which validates the manifest, packs the bundle,
-and attaches `polytomic-connector.mcpb` to the GitHub Release. You can also run
-the workflow manually from the **Actions** tab to download the bundle as a
-build artifact without cutting a release.
+Use the Makefile:
+
+```sh
+make release BUMP=patch   # or minor / major, or TO=X.Y.Z
+make push                 # push the commit + tag
+```
+
+`make release` bumps the version in `manifest.json` (the source of truth) and
+`package.json`/`package-lock.json`, validates the manifest, commits, and tags
+`vX.Y.Z`. `make push` pushes the commit and tag, which runs
+`.github/workflows/release.yml` to pack the bundle and attach
+`polytomic-connector.mcpb` to the GitHub Release. Run `make` with no target for
+the full list.
+
+(You can also push a `v*` tag by hand, or run the workflow manually from the
+**Actions** tab to build the bundle without cutting a release.)
 
 ## Updating
 
